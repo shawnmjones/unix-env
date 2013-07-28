@@ -5,6 +5,7 @@ FILES="
 .gitconfig
 .gitignore_global
 .profile
+.ssh/config
 .tcshrc
 .vimrc
 .vimcf/R.vim
@@ -21,6 +22,7 @@ DIRS="
 .tcsh_local
 .bash_local
 .sh_local
+.ssh
 .tcsh_local
 .vimcf
 .vimbackup
