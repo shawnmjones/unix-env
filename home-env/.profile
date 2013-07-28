@@ -24,12 +24,20 @@ SCREENCAP=~/.screencap
 # editor for running svn
 SVN_EDITOR=/usr/bin/vim
 
+if [ `id -u` -eq 0 ]; then
+    PROMPT_END='# -->'
+else
+    PROMPT_END='$ -->'
+fi
+
 # in the event that we really are a Bourne shell, set these
 # prompts so that the user can glean SOME useful information from
 # the system
 case $TERM in
   screen|screen.linux)
-    export PS1="\n\t \u@\h:\w\nsh (screen \l)\$ --> "
+    export PS1="
+`whoami`@`hostname`
+sh (screen) $PROMPT_END "
     export PS2='> '
     export PS3='$PS2 > '
     export PS4='$PS3 > '
@@ -38,16 +46,18 @@ case $TERM in
     export PS2='> '
     export PS3='$PS2 > '
     export PS4='$PS3 > '
-    export PS1="\n\t \u@\h:\w\nsh \$ --> "
+    export PS1="
+`whoami`@`hostname`
+sh $PROMPT_END "
     ;;
 esac
 
 export PATH HISTSIZE HOSTFILE INPUTRC TMOUT SCREENCAP
 
 # if running bash, source the ~/.bashrc, which may overwrite some of these
-#if [ -n "$BASH_VERSION" ]; then
-#    # include .bashrc if it exists
-#    if [ -f "$HOME/.bashrc" ]; then
-#	. "$HOME/.bashrc"
-#    fi
-#fi
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi

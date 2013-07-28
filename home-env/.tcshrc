@@ -5,32 +5,36 @@ set scp_path = "%n@%m:%~"
 set window_title = "%{\033]0;${scp_path}\007%}"
 set prompt_string = "\n%P ${scp_path}\ntcsh \% --%# "
 
-# check to see if we are running in screen
-if ( $?STY ) then
-    set prompt = "\n%P ${scp_path}\ntcsh(screen) \% --%# "
-else
-    if ( $term == "xterm" || $term == "xterm-color" ) then
-        # fancy window title for xterm
-        set prompt = "\n%P ${scp_path} ${window_title} \ntcsh \% --%# "
+if ($?loginsh) then
+    # check to see if we are running in screen
+    if ( $?STY ) then
+        set prompt = "\n%P ${scp_path}\ntcsh(screen) \% --%# "
     else
-        # safer an more legible to go with something simple for everyone else
-        set prompt = "${prompt_string}"
-    endif 
+        if ( $term == "xterm" || $term == "xterm-color" ) then
+            # fancy window title for xterm
+            set prompt = "\n%P ${scp_path} ${window_title} \ntcsh \% --%# "
+        else
+            # safer an more legible to go with something simple for everyone else
+            set prompt = "${prompt_string}"
+        endif 
+    endif
 endif
 
 # clean up
 unset scp_path window_title prompt_string
 
-# set up key sequences so that home and end work
-if ($term == "xterm" || $term == "vt100" \
-        || $term == "xterm-color" || $term == "vt102" \
-        || $term !~ "con*") then
-          bindkey "\e[1~" beginning-of-line  # Home
-          bindkey "\e[7~" beginning-of-line  # Home rxvt
-          bindkey "\e[2~" overwrite-mode     # Ins
-          bindkey "\e[3~" delete-char        # Delete
-          bindkey "\e[4~" end-of-line        # End
-          bindkey "\e[8~" end-of-line        # End rxvt
+if ($?loginsh) then
+    # set up key sequences so that home and end work
+    if ($term == "xterm" || $term == "vt100" \
+            || $term == "xterm-color" || $term == "vt102" \
+            || $term !~ "con*") then
+              bindkey "\e[1~" beginning-of-line  # Home
+              bindkey "\e[7~" beginning-of-line  # Home rxvt
+              bindkey "\e[2~" overwrite-mode     # Ins
+              bindkey "\e[3~" delete-char        # Delete
+              bindkey "\e[4~" end-of-line        # End
+              bindkey "\e[8~" end-of-line        # End rxvt
+    endif
 endif
 
 # history
@@ -61,29 +65,5 @@ unset noclobber
 # some useful aliases
 alias c clear
 
-set hostlist = ( "ws-dl-04" )
-set admin = 0
-
-foreach hostname ( $hostlist )
-    if ( $hostname == $HOST ) then
-        set admin = 1
-    endif
-end
-
-# swallow the rest of the command line after 
-# commands you are not allowed to execute
-if ( $admin != 1 ) then
-    alias sudo "sh ~/bin/norun.sh sudo" 
-    alias su "sh ~/bin/norun.sh su" 
-endif
-
-alias db550 "sqlplus sjone@FC10"
-
 # set the path to something reasonable
 set path = ($path $HOME/bin /sbin /usr/sbin)
-
-# extra scripts to run
-# source ~/bin/setup_oracle.csh
-
-# more oracle settings
-#setenv SQLPATH ${HOME}/.sqlplus:.

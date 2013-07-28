@@ -2,7 +2,7 @@
 	name = Shawn M. Jones
 	email = smj@littleprojects.org
 [core]
-	excludesfile = /Users/smj/.gitignore_global
+	excludesfile = /home/smj/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
