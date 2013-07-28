@@ -1,0 +1,12 @@
+
+See http://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/ for more information on the load of sh/BASH/ZSH.
+
+BASH loads the following files in the following order for interactive login:
+
+1.  ~/.bash_profile (or .bash_login if no .bash_profile; or ~/.profile if none of these)
+2.  ~/.bashrc (if loaded by .bash_profile)
+
+TCSH loads files in the following order for interactive login:
+
+1. ~/.tcshrc (or ~/.cshrc if no .tcshrc)
+2. ~/.login
