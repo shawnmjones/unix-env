@@ -18,6 +18,19 @@ alias gvim='$HOME/bin/mvim'
 #PATH=$HOME/bin:/usr/local/texlive/2009/bin/universal-darwin:/Applications/TeX/BibDesk.app/Contents/Resources:/Applications/ImageMagick-6.6.1/bin:$MAVEN_HOME/bin:$ANT_HOME/bin:$JAVA_HOME/bin:$JBOSS_HOME/bin:/opt/subversion/bin:/usr/local/mysql/bin:/opt/wireshark/bin:/bin:/usr/local/bin:/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/git/libexec/git-core:$PATH
 PATH=$HOME/bin:/usr/local/bin:$PATH
 
-CLASSPATH=$CLASSPATH:/Applications/Weka/weka-3-6-4/weka.jar
+#CLASSPATH=$CLASSPATH:/Applications/Weka/weka-3-6-4/weka.jar
 
 export INPUTRC PATH PROMPT_COMMAND HOSTFILE HISTSIZE TMOUT SCREENCAP JAVA_HOME ANT_HOME XDOCLET_HOME JBOSS_HOME PYTHONPATH CLASSPATH
+
+# something added these without my permission, but hey, who am I to argue?
+export PERL_LOCAL_LIB_ROOT="/Users/smj/perl5:$PERL_LOCAL_LIB_ROOT";
+export PERL_MB_OPT="--install_base "/Users/smj/perl5"";
+export PERL_MM_OPT="INSTALL_BASE=/Users/smj/perl5";
+export PERL5LIB="/Users/smj/perl5/lib/perl5:$PERL5LIB";
+export PATH="/Users/smj/perl5/bin:$PATH";
+
+# for PEAR
+export PATH="/Users/smj/pear/bin:$PATH"
+
+# for Ruby gems
+export PATH="/usr/local/opt/ruby/bin:$PATH"
