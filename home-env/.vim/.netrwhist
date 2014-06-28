@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/smj/Documents/Projects/Current/Nix-setup/home-env/.bash_local'
+let g:netrw_dirhist_2='/Users/smj/Documents/Projects/Current/memento-mediawiki-extension-performance/timegate-comparison/2014-04-08'
+let g:netrw_dirhist_3='/Users/smj/.ssh'
