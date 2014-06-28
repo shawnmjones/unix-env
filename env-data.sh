@@ -23,9 +23,9 @@ DIRS="
 .bash_local
 .sh_local
 .ssh
-.tcsh_local
 .vimcf
 .vimbackup
 .vimswap
 bin
+tmp
 "

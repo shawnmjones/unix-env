@@ -12,7 +12,9 @@ set directory=~/.vimbackup/ " where to put backup files
 set directory=~/.vimswap/ " where to put swap files
 set fileformats=unix,dos,mac " support all three line endings
 set noerrorbells " don't make noise
-set statusline=%<%f%=\ %h%m%r%=%-14.(%l,%c%V%)\ %b\ %P
+
+" 
+set statusline=%<%f\ [%{strlen(&fenc)?&fenc:'none'}]%=\ %h%m%r%=%-14.(%l,%c%V%)\ %b\ %p\ %o
 hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 fixdel
 
