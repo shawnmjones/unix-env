@@ -28,3 +28,9 @@ autocmd! BufNewFile,BufReadPre,FileReadPre *.py so ~/.vimcf/python.vim
 autocmd! BufNewFile,BufReadPre,FileReadPre *.tex so ~/.vimcf/tex.vim
 autocmd! BufNewFile,BufReadPre,FileReadPre *.R so ~/.vimcf/R.vim
 autocmd! BufNewFile,BufReadPre,FilereadPre *.php so ~/.vimcf/php.vim
+
+colorscheme zellner
+hi LineNr ctermfg=black
+
+source ~/.vimcf/cscope_maps.vim
+set nocscopeverbose
