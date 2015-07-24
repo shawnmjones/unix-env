@@ -32,5 +32,5 @@ autocmd! BufNewFile,BufReadPre,FilereadPre *.php so ~/.vimcf/php.vim
 colorscheme zellner
 hi LineNr ctermfg=black
 
-source ~/.vimcf/cscope_maps.vim
-set nocscopeverbose
+"source ~/.vimcf/cscope_maps.vim
+"set nocscopeverbose
