@@ -1,16 +1,13 @@
 
-# aliases specific to Mac
-alias gvim='$HOME/bin/mvim'
-
 # For Java on OSX
 #JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
 #ANT_HOME=/Users/smj/Applications/apache-ant-1.8.0
-#MAVEN_HOME=/Users/smj/Applications/apache-maven-2.2.1
+MAVEN_HOME=/Users/smj/Applications/apache-maven-3.2.2
 #XDOCLET_HOME=/Users/smj/Applications/xdoclet-1.2.3
 #JBOSS_HOME=/Users/smj/Applications/jboss-6.0.0.20100216-M2
 #JBOSS_HOME=/Users/smj/Applications/jboss-4.0.2
 #JBOSS_HOME=/Users/smj/Applications/jboss-5.1.0.GA
-#M2_HOME=/Users/smj/.m2/repository
+M2_HOME=/Users/smj/.m2/repository
 
 #PYTHONPATH=$HOME/bin/googlecl/lib/python:$HOME/bin/gdata/lib/python
 #PYTHONPATH=/usr/lib/python2.7:$PYTHONPATH
@@ -34,3 +31,10 @@ export PATH="/Users/smj/pear/bin:$PATH"
 
 # for Ruby gems
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# for Python's virtualenvwrapper
+export WORKON_HOME=~/virt-pythons
+source /usr/local/bin/virtualenvwrapper.sh
+
+# for Maven
+export PATH=/Users/smj/Applications/apache-maven-3.2.2/bin:$PATH
