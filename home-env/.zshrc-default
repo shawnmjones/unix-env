@@ -34,4 +34,7 @@ zsh (%h) %# --> "
 export RPROMPT="%?"
 
 source ~/.zshcf/net-utils.zsh
-source ${ZDOTDIR:-$HOME}/.zsh_local/*
+
+for i in `ls ~/.zsh_local`; do
+    source ${ZDOTDIR:-$HOME}/.zsh_local/${i}
+done
