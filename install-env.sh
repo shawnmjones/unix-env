@@ -16,10 +16,13 @@ done
 
 for d in $DIRS; do
     echo "Creating directory [$HOME/$d]"
-    mkdir $HOME/$d
+
+    if [ ! -d $HOME/$d ]; then
+        mkdir $HOME/$d
+    fi
 done
 
 for f in $FILES; do
     echo "Installing [home-env/$f] to [$HOME/$f]"
-    cp home-env/$f $HOME/$f
+    ln -s home-env/$f $HOME/$f
 done

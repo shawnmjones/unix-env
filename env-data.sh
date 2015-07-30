@@ -16,12 +16,16 @@ FILES="
 .bash_local/.bashrc-coyote.littleprojects.org
 .tcsh_local/.tcshrc-procyon.cs.odu.edu
 bin/norun.sh
+.zshrc
+.zshrc-default
+.zpreztorc
 "
 
 DIRS="
 .tcsh_local
 .bash_local
 .sh_local
+.zsh_local
 .ssh
 .vimcf
 .vimbackup
