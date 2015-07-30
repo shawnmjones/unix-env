@@ -1,0 +1,37 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zhistory
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory extendedglob
+unsetopt nomatch
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/smjones/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# change window title
+case $TERM in 
+    xterm*)
+        precmd() { print -Pn "\e]0;%n@%m:%~\a"}
+        ;;
+esac
+
+# give the nice zsh menu-style selections for completion
+zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
+zstyle ':completion:*:history-words' menu yes
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:*:*:*:*' menu select
+
+# set prompts to something useful
+export PROMPT="
+%B%*%b %S%n@%m:%~%s 
+zsh (%h) %# --> "
+
+export RPROMPT="%?"
+
+source ~/.zshcf/net-utils.zsh
+source ${ZDOTDIR:-$HOME}/.zsh_local/*
