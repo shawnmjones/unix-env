@@ -4,13 +4,14 @@
 
 if [ ! -d $HOME/.envbackup ]; then
     echo "Creating directory to store original copies"
-    mkdir -p $HOME/.envbackup
+    backupdir=`date +'%Y-%m-%dT%H:%M:%S%:z'`
+    mkdir -p $HOME/.envbackup/${backupdir}
 fi
 
 for f in $FILES; do
     if [ -e $HOME/$f ]; then
         echo "Backing up [$HOME/$f] to [$HOME/.envbackup/$f]"
-        cp -R $HOME/$f $HOME/.envbackup/$f
+        cp -R $HOME/$f $HOME/.envbackup/${backupdir}/$f
     fi
 done
 
