@@ -1,6 +1,6 @@
 [user]
 	name = Shawn M. Jones
-	email = smj@littleprojects.org
+	email = jones.shawn.m@gmail.com
 [core]
 	excludesfile = /home/smj/.gitignore_global
 [difftool "sourcetree"]
@@ -12,7 +12,7 @@
 [push]
 	default = simple
 [diff]
-    external = git_diff_wrapper
+#    external = git_diff_wrapper
 	tool = vimdiff
 [pager]
     diff = 
