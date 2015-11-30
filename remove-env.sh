@@ -4,7 +4,7 @@
 
 echo "This script is dangerous, do not use unless you want to rip out all of your configs!!!"
 echo "comment these lines if you need to run it!"
-#exit 255
+exit 255
 
 for f in $FILES; do
     echo "Removing [$HOME/$f]"
