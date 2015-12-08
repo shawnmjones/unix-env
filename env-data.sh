@@ -19,6 +19,9 @@ bin/norun.sh
 .zshrc
 .zshrc-default
 .zpreztorc
+.zlogin
+.zlogout
+.zprofile
 "
 
 DIRS="
