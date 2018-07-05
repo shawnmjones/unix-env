@@ -29,7 +29,7 @@ autocmd! BufNewFile,BufReadPre,FileReadPre *.tex so ~/.vimcf/tex.vim
 autocmd! BufNewFile,BufReadPre,FileReadPre *.R so ~/.vimcf/R.vim
 autocmd! BufNewFile,BufReadPre,FilereadPre *.php so ~/.vimcf/php.vim
 
-colorscheme zellner
+"colorscheme zellner
 hi LineNr ctermfg=black
 
 set history=1000

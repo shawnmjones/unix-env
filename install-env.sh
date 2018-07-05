@@ -28,6 +28,6 @@ for d in $DIRS; do
 done
 
 for f in $FILES; do
-    echo "Installing [home-env/$f] to [$HOME/$f]"
-    ln -s ${scriptdir}/home-env/$f $HOME/$f
+    echo "Installing [${scriptdir}/home-env/$f] to [$HOME/$f]"
+    ln -s "${scriptdir}/home-env/$f" $HOME/$f
 done

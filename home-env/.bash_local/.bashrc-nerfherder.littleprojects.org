@@ -1,0 +1,40 @@
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
+
+# For rbenv (Ruby)
+eval "$(rbenv init -)"
+
+# for git info in bash prompt
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+
+case $TERM in
+  screen|screen.linux)
+# I want to see when I'm running a screen session
+    SH_MAJOR_VER=`echo $BASH_VERSION | sed 's/\([^.]\)*\..*$/\1/g'`
+    if [ $SH_MAJOR_VER -lt 3 ]; then
+      PS1="\n\$(__git_ps1 '(%s)')\n\t \u@\h:\w\nbash (screen)\$ --> "
+    else
+      PS1="\n\$(__git_ps1 '(%s)')\n\t \u@\h:\w\nbash (screen \l)\$ --> "
+    fi
+    PS2='> '
+    PS3='$PS2 > '
+    PS4='$PS3 > '
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
+    ;;
+  linux)
+# linux terminal doesn't need the PROMPT_COMMAND, there're no Windows
+    PS1='\n\t \u@\h:\w\nbash\$ --> '
+    PS2='> '
+    PS3='$PS2 > '
+    PS4='$PS3 > '
+    PROMPT_COMMAND=""
+    ;;
+  *)
+# safer and more legible to go with something simple
+    PS1="\n\$(__git_ps1 '(%s)')\n\t \u@\h:\w\nbash \$ --> "
+    PS2='> '
+    PS3='$PS2 > '
+    PS4='$PS3 > '
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
+    ;;
+esac
